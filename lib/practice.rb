@@ -1,54 +1,56 @@
-
-
-
-
 class Rpc
-  initialize(input1,input2)
-  @@input1 = input1
-  @@input2 = input2
-  end
-  # def input1
-  #   @input1
-  # end
-  # def input2
-  #   @input2
-  # end
+  def initialize(input_1, input_2)
+  @input1 = input_1
+  @input2 = input_2
+end
+
+def input_1
+  @input_1
+end
+
+def input_2
+  @input_2
+end
+
 def game_manager
-  if @@input1 == @@input2
-    puts "it is a tie"
-  elsif @@input1 == "scissors" && @@input2 == "rock"
-  puts  "player two wins"
-  elsif @@input1 == "scissors" && @@input2 == "paper"
-    puts "player one wins"
-  elsif @@input1 == "paper" && @@input2 == "rock"
-  puts "player one wins"
-  elsif @@input1 == "paper" && @@input2 == "scissors"
-     puts "player two wins"
-  elsif @@input1 == "rock" && @@input2 == "scissors"
-    puts "player one wins"
-  elsif @@input1 == "rock" && @@input2 == "scissors"
-    puts "player one wins"
+  if @input1 == @input2
+     "it is a tie"
+  elsif @input1 == "scissors" && @input2 == "rock"
+      "player two wins"
+  elsif @input1 == "scissors" && @input2 == "paper"
+     "player one wins"
+  elsif @input1 == "paper" && @input2 == "rock"
+     "player one wins"
+  elsif @input1 == "paper" && @input2 == "scissors"
+     "player two wins"
+  elsif @input1 == "rock" && @input2 == "scissors"
+     "player one wins"
+  elsif @input1 == "rock" && @input2 == "scissors"
+     "player one wins"
 
     # player 2 below this line
 
-  elsif @@input2 == "scissors" && @@input1 == "rock"
-    puts "player one wins"
-  elsif @@input2 == "scissors" && @@input1 == "paper"
-  puts "player two wins"
-  elsif @@input2 == "paper" && @@input1 == "rock"
-    puts "player two wins"
-  elsif @@input2 == "paper" && @@input1 == "scissors"
-    puts "player one wins"
-  elsif @@input2 == "rock" && @@input1 == "scissors"
-    puts "player two wins"
-  elsif @@input2 == "rock" && @@input1 == "scissors"
-    puts "player two wins"
+  elsif @input2 == "scissors" && @input1 == "rock"
+     "player one wins"
+  elsif @input2 == "scissors" && @input1 == "paper"
+     "player two wins"
+  elsif @input2 == "paper" && @input1 == "rock"
+     "player two wins"
+  elsif @input2 == "paper" && @input1 == "scissors"
+     "player one wins"
+  elsif @input2 == "rock" && @input1 == "scissors"
+     "player two wins"
+  elsif @input2 == "rock" && @input1 == "scissors"
+     "player two wins"
+  else
+    "please enter a valid rps combo"
+  end
   end
 end
 
 
-game = Rpc("scissors","rock")
-game.game_manager
+# game = Rpc.new("paper","scissors")
+# game.game_manager
 
 
 
