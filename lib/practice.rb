@@ -1,69 +1,36 @@
 class Rpc
-  def initialize(input_1, input_2)
-  @input1 = input_1
-  @input2 = input_2
-end
-
-def input_1
-  @input_1
-end
-
-def input_2
-  @input_2
-end
-
-def game_manager
-  if @input1 == @input2
-     "it is a tie"
-  elsif @input1 == "scissors" && @input2 == "rock"
-      "player two wins"
-  elsif @input1 == "scissors" && @input2 == "paper"
-     "player one wins"
-  elsif @input1 == "paper" && @input2 == "rock"
-     "player one wins"
-  elsif @input1 == "paper" && @input2 == "scissors"
-     "player two wins"
-  elsif @input1 == "rock" && @input2 == "scissors"
-     "player one wins"
-  elsif @input1 == "rock" && @input2 == "scissors"
-     "player one wins"
-
-    # player 2 below this line
-
-  elsif @input2 == "scissors" && @input1 == "rock"
-     "player one wins"
-  elsif @input2 == "scissors" && @input1 == "paper"
-     "player two wins"
-  elsif @input2 == "paper" && @input1 == "rock"
-     "player two wins"
-  elsif @input2 == "paper" && @input1 == "scissors"
-     "player one wins"
-  elsif @input2 == "rock" && @input1 == "scissors"
-     "player two wins"
-  elsif @input2 == "rock" && @input1 == "scissors"
-     "player two wins"
-  else
-    "please enter a valid rps combo"
+  def initialize(input1, input2)
+    @raw_input1 = input1
+    @raw_input2 = input2
+    @input1 = input1
+    @input2 = input2
+    @input3 = @input1 +"," +" "+ @input2
   end
+
+  @@game = {
+      "scissors, rock" => "player two wins",
+      "scissors, paper" => "player one wins",
+      "paper, rock" => "player one wins",
+      "paper, scissors" => "player two wins",
+      "rock, scissors" => "player one wins",
+      "rock, scissors" => "player one wins",
+      # player 2 below this line
+      "rock, scissors" => "player one wins",
+      "paper, scissors" => "player two wins",
+      "rock, paper" => "player two wins",
+      "scissors, paper" => "player one wins",
+      "rock, paper" => "player two wins",
+      "rock, scissors" => "player two wins"
+    }
+
+  def game_manager
+    if @raw_input1 == @raw_input2
+      message = "it is a tie"
+    elsif
+      message = @@game.fetch(@input3)
+    else
+      message = "please enter a valid rps combo"
+    end
+    message
   end
 end
-
-
-# game = Rpc.new("paper","scissors")
-# game.game_manager
-
-
-
-# class Beef
-#   def a_function
-#     puts "hello"
-#     b_function
-#   end
-#   def b_function
-#     puts "steve"
-#   end
-# end
-#
-# beef = Beef.new
-#
-# beef.a_function
