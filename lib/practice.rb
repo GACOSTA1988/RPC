@@ -2,7 +2,6 @@ class Rpc
   def initialize(input1, input2)
     @input1 = input1
     @input2 = input2
-    @input3 = @input1 +"," +" "+ @input2
   end
   @@game = {
       "scissors, rock" => "player two wins",
@@ -16,7 +15,7 @@ class Rpc
     if @input1 == @input2
       message = "it is a tie"
     elsif
-      message = @@game.fetch(@input3)
+      message = @@game.fetch(@input1 +"," +" "+ @input2)
     else
       message = "please enter a valid rps combo"
     end

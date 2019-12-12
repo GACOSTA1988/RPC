@@ -1,6 +1,6 @@
 #!/user/bin/env ruby
 require './lib/practice'
-
+puts('⚡️👊⚡️ROCK ⚡️📄⚡️PAPER ⚡️✂️⚡️SCISSORS🚀🚀')
 puts('choose a thing')
 input = gets.chomp
 puts('another!')
